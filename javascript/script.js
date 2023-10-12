@@ -5,7 +5,7 @@ const alert = document.querySelector(".alert");
 
 btnVerifyMail.addEventListener("click", function () {
   let userMail = document.getElementById("email").value;
-  let alert = document.getElementById("error");
+
   let verified = document.getElementById("verified");
   console.log(userMail);
 
@@ -18,15 +18,36 @@ btnVerifyMail.addEventListener("click", function () {
   }
   let text, cla;
   if (correct) {
-    cla = "alert-success";
-    text = "Mail presente";
+    alert.innerText = `Benvenuto all'interno del programma ${userMail}`;
+    alert.classList.add("alert-success", "text-success");
+    alert.classList.remove(
+      "d-none",
+      "alert-warning",
+      "text-warning",
+      "alert-danger",
+      "text-danger"
+    );
+  } else if (userMail === "") {
+    alert.innerText = "Nessun dato inserito, per favore compila il form";
+    alert.classList.add("alert-warning", "text-warning");
+    alert.classList.remove(
+      "d-none",
+      "alert-success",
+      "text-success",
+      "alert-danger",
+      "text-danger"
+    );
   } else {
-    cla = "alert-danger";
-    text = "Mail assente";
+    alert.innerText = "Mail errata, verifica i dati inseriti";
+    alert.classList.add("alert-danger", "text-danger");
+    alert.classList.remove(
+      "d-none",
+      "alert-success",
+      "text-success",
+      "alert-warning",
+      "text-warning"
+    );
   }
-  alert.innerText = text;
-  alert.classList.add(cla);
-  alert.classList.remove("d-none");
 });
 
 ///////// ESERCIZIO DADI
