@@ -30,9 +30,15 @@ btnVerifyMail.addEventListener("click", function () {
 });
 
 ///////// ESERCIZIO DADI
+const diceNumbers = [1, 2, 3, 4, 5, 6];
+
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
 let throwDice = document.getElementById("throw");
 
-throwDice.addEventListener("click", function () {});
+throwDice.addEventListener("click", function () {
+  let randomNumbers = diceNumbers[getRndInteger(0, diceNumbers.length - 1)];
+  console.log(randomNumbers);
+});
