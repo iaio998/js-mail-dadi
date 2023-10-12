@@ -34,6 +34,7 @@ const diceNumbers = [1, 2, 3, 4, 5, 6];
 const throwDice = document.getElementById("throw");
 const userResult = document.getElementById("user-result");
 const botResult = document.getElementById("bot-result");
+const disclaimer = document.getElementById("winner");
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -46,4 +47,35 @@ throwDice.addEventListener("click", function () {
 
   userResult.innerHTML = randomNumbersUser;
   botResult.innerHTML = randomNumbersBot;
+  if (randomNumbersBot > randomNumbersUser) {
+    disclaimer.classList.remove(
+      "d-none",
+      "alert-success",
+      "text-success",
+      "alert-warning",
+      "text-warning"
+    );
+    disclaimer.classList.add("alert-danger", "text-danger");
+    disclaimer.innerHTML = `I'M SORRY FOR YOU, <em><strong>BOT</strong></em> IS THE WINNER`;
+  } else if (randomNumbersBot < randomNumbersUser) {
+    disclaimer.classList.remove(
+      "d-none",
+      "alert-danger",
+      "text-danger",
+      "alert-warning",
+      "text-warning"
+    );
+    disclaimer.classList.add("alert-success", "text-success");
+    disclaimer.innerHTML = `WELL DONE, <em><strong>YOU</strong></em> ARE THE WINNER`;
+  } else {
+    disclaimer.classList.remove(
+      "d-none",
+      "alert-success",
+      "text-success",
+      "alert-danger",
+      "text-danger"
+    );
+    disclaimer.classList.add("alert-warning", "text-warning");
+    disclaimer.innerHTML = `WOW! <em><strong>THAT'S A TIE</strong></em> `;
+  }
 });
