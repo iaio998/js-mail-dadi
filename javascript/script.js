@@ -30,3 +30,9 @@ btnVerifyMail.addEventListener("click", function () {
 });
 
 ///////// ESERCIZIO DADI
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+let throwDice = document.getElementById("throw");
+
+throwDice.addEventListener("click", function () {});
