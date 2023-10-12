@@ -31,14 +31,19 @@ btnVerifyMail.addEventListener("click", function () {
 
 ///////// ESERCIZIO DADI
 const diceNumbers = [1, 2, 3, 4, 5, 6];
+const throwDice = document.getElementById("throw");
+const userResult = document.getElementById("user-result");
+const botResult = document.getElementById("bot-result");
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-let throwDice = document.getElementById("throw");
-
 throwDice.addEventListener("click", function () {
-  let randomNumbers = diceNumbers[getRndInteger(0, diceNumbers.length - 1)];
-  console.log(randomNumbers);
+  let randomNumbersUser = diceNumbers[getRndInteger(0, diceNumbers.length - 1)];
+  let randomNumbersBot = diceNumbers[getRndInteger(0, diceNumbers.length - 1)];
+  console.log(randomNumbersUser, randomNumbersBot);
+
+  userResult.innerHTML = randomNumbersUser;
+  botResult.innerHTML = randomNumbersBot;
 });
