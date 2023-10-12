@@ -16,7 +16,7 @@
 <body>
     <main class="container">
 
-        <section id="top-section" class="border">
+        <section id="top-section" class="border p-2">
             <h1 class="text-center">Mail verifier</h1>
             <div class="row align-items-center">
                 <div class="col">
@@ -24,11 +24,14 @@
                     <input type="email" id="email" name="email" placeholder="abcd@mail.it" required>
                 </div>
                 <div class="col">
-                    <button id="btn-mail-verify" class="btn btn-primary">Verifica Mail</button>
+                    <button id="btn-mail-verify" class="btn btn-primary">Verify Mail</button>
                 </div>
-                <div id="answer-verify">
-
-                </div>
+            </div>
+            <div id="error" class="alert alert-danger text-center text-danger fs-2 my-3 d-none">
+                PLEASE ENTER REQUIRED INFO!
+            </div>
+            <div id="verified" class="alert alert-success text-center text-success fs-2 my-3 d-none">
+                WELCOME ON BOARD!
             </div>
         </section>
 
